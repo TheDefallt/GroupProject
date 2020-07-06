@@ -7,18 +7,17 @@ package com.byui;
  *      acctnum: int
  *      name: string
  *      dateCreated: java.util.Date
- *    ??  totalAmmount: double
  *Constructors
  *      Account()
- *      Account(name: string, acctnum: int, ??totalAmount: double)
+ *      Account(name: string, acctnum: int)
  *getters/setters
  *      getAcctnum(): int
  *      getName(): string
  *      getDateCreated(): java.util.Date
- *    ??  getTotalAmmount(): double
  *      setAcctnum(): void
  *      setName(): void
- *     ?? setTotalAmmount(): void
+ *
+ *     toString: String
  *
  */
 public class account {
