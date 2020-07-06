@@ -1,7 +1,10 @@
 package com.byui;
 
 public class Main {
-
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 	// This is a test class.
         //test 123
