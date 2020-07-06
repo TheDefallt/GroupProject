@@ -4,5 +4,5 @@ package com.byui;
  * UML
  *
  */
-public class savings {
+public class savings extends account {
 }
