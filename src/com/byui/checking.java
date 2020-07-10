@@ -3,13 +3,14 @@ package com.byui;
 /**
  * UML
  *variables
- *      checkAmount: double
+ *      -monthlyExpenses: ArrayList<double>
  *Constructors
- *      checking()
- *      checking(name: string, acctnum: int, checkAmount: double )
+ *      +checking()
+ *      +Checking(monthlyExpenses: double, name: string, balance: double)
  *getters/setters
- *      getcheckAmount(): double
- *      setcheckAmount(): void\
+ *      +getMonthlyExpenses(): ArrayList<double>
+ *      +setMonthlyExpenses(): void
+ *      +monthlyBalance(): double
  *
  *      toString: String
  */

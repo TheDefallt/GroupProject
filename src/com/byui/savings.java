@@ -3,15 +3,17 @@ package com.byui;
 /**
  * UML
  *variables
- *      saveAmount: double
+ *      -annualInterestRate: double
  *Constructors
- *      savings()
- *      savings(name: string, acctnum: int, saveAmount: double )
+ *      +savings()
+ *      +Savings(balance: double, name: string, annualInterestRate: double)
  *getters/setters
- *      getsaveAmount(): double
- *      setsaveAmount(): void\
+ *      +getAnnualInterestRate(): double
+ *      +setAnnualInterestRate(): void
+ *      +calculateAnnualBalance(): double
  *
- *      toString: String
+ *      +toString: String
+ *
  */
 public class savings extends account {
 }
