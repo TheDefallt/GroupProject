@@ -1,8 +1,9 @@
 package com.byui;
 
+import java.util.Date;
+
 /**
  * UML
- * ////note ?? might not be neccesary for this part of code////
  *variables
  *      -acctNum: int
  *      -name: string
@@ -11,7 +12,7 @@ package com.byui;
  *      -income: double
  *Constructors
  *      +Account()
- *      +Account(name: string, acctnum: int, dateCreated: java.util.Date)
+ *      +Account(name: string, acctnum: int, balance: double, income: double)
  *getters/setters
  *      +getAcctnum(): int
  *      +getName(): string
@@ -27,4 +28,61 @@ package com.byui;
  *
  */
 public class account {
+    //variables
+    private int acctNum;
+    private String name;
+    private java.util.Date dateCreated;
+    private double balance, income;
+    //default object
+    public account(){
+
+    }
+    //object
+    public account(String name, int acctNum, double balance, double income){
+        this.acctNum = acctNum;
+        this.name = name;
+        dateCreated = new java.util.Date();
+        this.balance = balance;
+        this.income = income;
+
+    }
+    //output string
+    public String toString(){
+        return "test 1";
+    }
+    //getters and setters
+    public int getAcctNum() {
+        return acctNum;
+    }
+    public void setAcctNum(int acctNum) {
+        this.acctNum = acctNum;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public double getIncome() {
+        return income;
+    }
+    public void setIncome(double income) {
+        this.income = income;
+    }
 }
