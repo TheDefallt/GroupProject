@@ -15,4 +15,31 @@ package com.byui;
  *      toString: String
  */
 public class checking extends account {
+  //Holds a list of expenses to be figured into the user's budget.
+  private ArrayList<double> expenses = new ArrayList<double>();
+  
+  //No-arg constructor
+  public Checking(){
+  }
+  
+  //Parameterized constructor
+  public Checking(monthlyExpenses: ArrayList<double>, name: string, balance: double){
+      this.monthlyExpenses = monthlyExpenses;
+      this.name = name;
+      this.balance = balance;
+  }
+  
+  //Monthly Expense list getter
+  public ArrayList<double> getMonthlyExpenses(){
+    return monthlyExpenses;
+  }
+  
+  //Monthly Expense setter
+  public void setMonthyExpenses(monthlyExpenses: ArrayList<double>){
+    this.monthlyExpenses = monthlyExpenses;
+  }
+  
+  public double monthlyBalance(){
+    
+  }
 }
