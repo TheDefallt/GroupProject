@@ -39,7 +39,17 @@ public class checking extends account {
     this.monthlyExpenses = monthlyExpenses;
   }
   
+  //Returns total of all expenses in the monthlyExpenses ArrayList.
+  public double totalMonthlyExpenses(){
+    double total = 0;
+    for (double expense : monthlyExpenses){
+      total += expense;
+    }
+    return total;
+  }
+  
+  //Returns total monthly balance after figuring income, current balance, and expenses
   public double monthlyBalance(){
-    
+    return balance + income - totalMonthlyExpenses;
   }
 }
