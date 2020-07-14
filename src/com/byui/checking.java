@@ -23,7 +23,7 @@ public class checking extends account {
   }
   
   //Parameterized constructor
-  public Checking(monthlyExpenses: ArrayList<double>, name: string, balance: double){
+  public Checking(ArrayList<double> monthlyExpenses, string name, double balance){
       this.monthlyExpenses = monthlyExpenses;
       this.name = name;
       this.balance = balance;
@@ -35,7 +35,7 @@ public class checking extends account {
   }
   
   //Monthly Expense setter
-  public void setMonthyExpenses(monthlyExpenses: ArrayList<double>){
+  public void setMonthyExpenses(ArrayList<double> monthlyExpenses){
     this.monthlyExpenses = monthlyExpenses;
   }
   
