@@ -41,13 +41,8 @@ public class savings extends account {
     this.annualPercentageYield = annualPercentageYield;
   }
   
+  //Returns the Annual Balance of the savings account
   public double calculateAnnualBalance(){
-    return 
+    return (balance * annualPercentageyield) + annualPercentageYield;
   }
-  
-  
-  
-  
-  
-  
 }
