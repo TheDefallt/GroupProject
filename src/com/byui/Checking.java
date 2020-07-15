@@ -1,5 +1,7 @@
 package com.byui;
 
+import java.util.ArrayList;
+
 /**
  * UML
  *variables
@@ -14,42 +16,42 @@ package com.byui;
  *
  *      toString: String
  */
-public class checking extends account {
+public class Checking extends account {
   //Holds a list of expenses to be figured into the user's budget.
-  private ArrayList<double> expenses = new ArrayList<double>();
-  
+  private ArrayList<Double> expenses = new ArrayList<>();
+
   //No-arg constructor
   public Checking(){
   }
-  
+
   //Parameterized constructor
-  public Checking(ArrayList<double> monthlyExpenses, string name, double balance){
-      this.monthlyExpenses = monthlyExpenses;
-      this.name = name;
-      this.balance = balance;
+  public Checking(ArrayList<Double> expenses, String name, double balance){
+    super(name, balance);
+    this.expenses = expenses;
+
   }
-  
+
   //Monthly Expense list getter
-  public ArrayList<double> getMonthlyExpenses(){
-    return monthlyExpenses;
+  public ArrayList<Double> getMonthlyExpenses(){
+    return expenses;
   }
-  
+
   //Monthly Expense setter
-  public void setMonthyExpenses(ArrayList<double> monthlyExpenses){
-    this.monthlyExpenses = monthlyExpenses;
+  public void setMonthlyExpenses(ArrayList<Double> expenses){
+    this.expenses = expenses;
   }
-  
+
   //Returns total of all expenses in the monthlyExpenses ArrayList.
   public double totalMonthlyExpenses(){
     double total = 0;
-    for (double expense : monthlyExpenses){
+    for (double expense : expenses){
       total += expense;
     }
     return total;
   }
-  
+
   //Returns total monthly balance after figuring income, current balance, and expenses
   public double monthlyBalance(){
-    return balance + income - totalMonthlyExpenses;
+    return super.getBalance() + super.getIncome() - totalMonthlyExpenses();
   }
 }

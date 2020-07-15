@@ -28,6 +28,15 @@ import java.util.Date;
  *
  */
 public class account {
+    /**
+     * Pesudo Code
+     * CREATE Variables for Account Number, Users name, date of account creation or last updated, account balance, and users deposit
+     * CREATE default object
+     * CREATE object with parameters of user name and account balance
+     *      *
+     *      *
+     * SETS
+     */
     //variables
     private int acctNum;
     private String name;
