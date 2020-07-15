@@ -15,7 +15,7 @@ package com.byui;
  *      +toString: String
  *
  */
-public class Savings extends account {
+public class Savings extends Account {
   //Stores the APR for the savings account.
   private double annualPercentageYield;
 

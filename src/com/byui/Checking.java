@@ -16,7 +16,7 @@ import java.util.ArrayList;
  *
  *      toString: String
  */
-public class Checking extends account {
+public class Checking extends Account {
   //Holds a list of expenses to be figured into the user's budget.
   private ArrayList<Double> expenses = new ArrayList<>();
 
