@@ -21,7 +21,6 @@ public class Savings extends account {
   
   //No-arg constructor
   public Savings(){
-  
   }
   
   //Parameterized constructor
