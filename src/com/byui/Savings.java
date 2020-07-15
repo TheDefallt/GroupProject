@@ -15,19 +15,18 @@ package com.byui;
  *      +toString: String
  *
  */
-public class savings extends account {
+public class Savings extends account {
   //Stores the APR for the savings account.
   private double annualPercentageYield;
-  
+
   //No-arg constructor
   public Savings(){
   
   }
   
   //Parameterized constructor
-  public Savings(double balance, string name, double annualPercentageYield){
-    this.balance = balance;
-    this.name = name;
+  public Savings(double balance, String name, double annualPercentageYield){
+    super(name, balance);
     this.annualPercentageYield = annualPercentageYield;
   }
   
@@ -43,6 +42,6 @@ public class savings extends account {
   
   //Returns the Annual Balance of the savings account
   public double calculateAnnualBalance(){
-    return (balance * annualPercentageyield) + annualPercentageYield;
+    return (account.balance * annualPercentageYield) + annualPercentageYield;
   }
 }

@@ -38,7 +38,7 @@ public class account {
 
     }
     //object
-    public account(String name, int acctNum, double balance, double income){
+    public account(String name, double balance){
         this.acctNum = acctNum;
         this.name = name;
         dateCreated = new java.util.Date();
@@ -84,5 +84,8 @@ public class account {
     }
     public void setIncome(double income) {
         this.income = income;
+    }
+    public double monthlyBalance(){
+        return 0;
     }
 }
