@@ -27,7 +27,7 @@ import java.util.Date;
  *     +toString: String
  *
  */
-public class account {
+public class Account {
     /**
      * Pesudo Code
      * CREATE Variables for Account Number, Users name, date of account creation or last updated, account balance, and users deposit
@@ -43,11 +43,11 @@ public class account {
     private java.util.Date dateCreated;
     private double balance, income;
     //default object
-    public account(){
+    public Account(){
 
     }
     //object
-    public account(String name, double balance){
+    public Account(String name, double balance){
         this.acctNum = acctNum;
         this.name = name;
         dateCreated = new java.util.Date();
