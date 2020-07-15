@@ -19,9 +19,16 @@ public class Main {
          *
          * Ask the user if they Want to start a checking
          *      IF user INPUT is yes
-         *          checking account info
-         *          *
-         *          *
+         *          * checking account info
+         *               SCAN user input for Account Balance
+         *               Ask user if they have expenses
+         *               IF yes Ask how many different expenses the user have
+         *               DO Prompt user to enter expense amount and store it into expense  ARRAY
+         *               WHILE CREATE file expenseData.txt
+         *               FOR each expense input WRITE it to expenseData.txt
+         *               then READ all the expense inputs in expenseData.txt
+         *               WHILE finding the total amount of expenses
+         *               SHOW name, account Number,starting balance,total expense, and current balance
          *
          *      ELSE IF user INPUT is no
          *          Proceed to Savings prompt
