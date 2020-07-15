@@ -33,9 +33,10 @@ public class Account {
      * CREATE Variables for Account Number, Users name, date of account creation or last updated, account balance, and users deposit
      * CREATE default object
      * CREATE object with parameters of user name and account balance
-     *      *
-     *      *
-     * SETS
+     *      SET accountNumber, user name, account balance, user deposit, and date account created or updated to object
+     * SETTERS for accountNumber, user name, account balance, user deposit, and date account created or updated to Class
+     * GETTERS for accountNumber, user name, account balance, user deposit, and date account created or updated to Class
+     * OUTPUT account info to extension classes Savings and Checking
      */
     //variables
     private int acctNum;
@@ -93,8 +94,5 @@ public class Account {
     }
     public void setIncome(double income) {
         this.income = income;
-    }
-    public double monthlyBalance(){
-        return 0;
     }
 }

@@ -21,6 +21,7 @@ public class Main {
          *      IF user INPUT is yes
          *          * checking account info
          *               SCAN user input for Account Balance
+         *               GENERATE account Number for user account
          *               Ask user if they have expenses
          *               IF yes Ask how many different expenses the user have
          *               DO Prompt user to enter expense amount and store it into expense  ARRAY
