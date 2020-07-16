@@ -8,9 +8,9 @@ public class Main {
     public static void main(String[] args) {
 	//things needed
         //polymorphism
-        //printWriter(write)
-        //file(read)
-        //Array or Arraylist
+        //printWriter(write) check
+        //file(read) check
+        //Array or Arraylist check
 
         /**
          * Pesudo Code
@@ -35,10 +35,22 @@ public class Main {
          *               SHOW name, account Number,starting balance,total expense, and current balance
          *
          *      ELSE IF user INPUT is no
-         *          Proceed to Savings prompt
+         *          proceed to the rest of the program
          *      ElSE
          *         ERROR prompt user to enter yes no
-         *
+         * Ask the user if they Want to start a checking
+         *                IF user INPUT is yes
+         *                    * checking account info
+         *                         SCAN user input for Account Balance
+         *                         GENERATE account Number for user account
+         *                         SCAN user INPUT APR
+         *                         Calculate the worth of savings account in an year
+         *                         SHOW name, account Number,starting balance,APR, and projected balance
+         *                ELSE IF user INPUT is no
+         *                    proceed to the rest of the program
+         *                ElSE
+         *                   ERROR prompt user to enter yes no
+         * SHOW goodbye message
          */
     }
 }
