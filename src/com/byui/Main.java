@@ -26,8 +26,11 @@ public class Main {
          *               IF yes Ask how many different expenses the user have
          *               DO Prompt user to enter expense amount and store it into expense  ARRAY
          *               WHILE CREATE file expenseData.txt
+         *               CATCH ERROR file missing can not be created
          *               FOR each expense input WRITE it to expenseData.txt
+         *               CATCH ERROR file cannot be opened
          *               then READ all the expense inputs in expenseData.txt
+         *               CATCH ERROR reading the data
          *               WHILE finding the total amount of expenses
          *               SHOW name, account Number,starting balance,total expense, and current balance
          *
