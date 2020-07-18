@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class Checking extends Account {
   /**
-     * Pesudo Code
+     * Pseudo Code
      * CREATE Variables for an Array list of doubles to store individual expenses 
      * CREATE default object
      * CREATE object with parameters of user name and account balance

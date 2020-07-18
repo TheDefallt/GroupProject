@@ -17,7 +17,7 @@ package com.byui;
  */
 public class Savings extends Account {
   /**
-     * Pesudo Code
+     * Pseudo Code
      * CREATE Variable for the Annual Percentage Yield
      * CREATE default object
      * CREATE object with parameters of balance, name, and Annual Percentage Yield
