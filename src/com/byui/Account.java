@@ -24,7 +24,7 @@ import java.util.Date;
  *      +setBalance(): void
  *      +setIncome(): void
  *
- *     +toString: String
+ *     +displayObject(Account object: object): String
  *
  */
 public class Account {
@@ -48,8 +48,6 @@ public class Account {
         dateCreated = new java.util.Date();
     }
     //object
-
-
     public Account(String name, double balance){
         this.acctNum = acctNum;
         this.name = name;
@@ -57,10 +55,6 @@ public class Account {
         this.balance = balance;
         this.income = income;
 
-    }
-    //output string
-    public String toString(Account object){
-        return "test 1";
     }
     //polymorpism display object output
     public static void displayObject(Account object) {
