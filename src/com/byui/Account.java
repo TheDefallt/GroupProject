@@ -45,7 +45,7 @@ public class Account {
     private double balance, income;
     //default object
     public Account(){
-
+        dateCreated = new java.util.Date();
     }
     //object
 
@@ -59,8 +59,12 @@ public class Account {
 
     }
     //output string
-    public String toString(){
+    public String toString(Account object){
         return "test 1";
+    }
+    //polymorpism display object output
+    public static void displayObject(Account object) {
+        System.out.println(object.getName() + object.getDateCreated());
     }
     //getters and setters
     public int getAcctNum() {

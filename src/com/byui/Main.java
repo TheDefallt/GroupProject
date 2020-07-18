@@ -3,7 +3,7 @@ package com.byui;
 public class Main {
     /**
      *
-     * @param args
+     * @param args Program that collects and creates bank account information to help manage said created accounts
      */
     public static void main(String[] args) {
 	//things needed
@@ -40,7 +40,7 @@ public class Main {
          *         ERROR prompt user to enter yes no
          * Ask the user if they Want to start a checking
          *                IF user INPUT is yes
-         *                    * checking account info
+         *                    * savings account info
          *                         SCAN user input for Account Balance
          *                         GENERATE account Number for user account
          *                         SCAN user INPUT APR
@@ -50,6 +50,7 @@ public class Main {
          *                    proceed to the rest of the program
          *                ElSE
          *                   ERROR prompt user to enter yes no
+         * SHOW accounts overview
          * SHOW goodbye message
          */
     }
