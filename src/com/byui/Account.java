@@ -1,6 +1,7 @@
 package com.byui;
 
 import java.util.Date;
+import java.util.Random;
 
 /**
  * UML
@@ -49,7 +50,9 @@ public class Account {
     }
     //object
     public Account(String name, double balance){
-        this.acctNum = acctNum;
+        final int MAX= 999999999;
+        Random rand= new Random();
+        this.acctNum =rand.nextInt(MAX);
         this.name = name;
         dateCreated = new java.util.Date();
         this.balance = balance;
@@ -58,7 +61,8 @@ public class Account {
     }
     //polymorpism display object output
     public static void displayObject(Account object) {
-        System.out.println(object.getName() + object.getDateCreated());
+        System.out.printf(object.getName() +"\n" + object.getAcctNum() +"\n" + object.getDateCreated() + "\n"+"%.2f", object.getBalance());
+
     }
     //getters and setters
     public int getAcctNum() {
@@ -83,6 +87,7 @@ public class Account {
     }
 
     public double getBalance() {
+        balance += getIncome();
         return balance;
     }
     public void setBalance(double balance) {
