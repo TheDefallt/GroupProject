@@ -11,78 +11,97 @@ public class Chewckingtest {
 
 
     public static void main(String[] args) {
+        //main variables
         String name;
         char createOrNot;
-//test
+        //user input getter
         Scanner input= new Scanner(System.in);
-
+        //program info
        System.out.println(" Program info");
+       //name
        System.out.print("Please enter you full name: ");
        name = input.nextLine();
+       //create accounts if desired
        System.out.print(name + "Would you like to add an checking account Y/N?");
        createOrNot= input.next().charAt(0);
+       //checking
        if(createOrNot == 'y'|| createOrNot =='Y'){
            createChecking(name, input);
-       }//else if(createOrNot == 'n' || createOrNot =='N'){
+           //savings
+       }else if(createOrNot == 'n' || createOrNot =='N'){
            //createSavings(name,input);
-       //}
+       }
+       // if answer not y or n
        else{
            System.out.println("input must be Y or N.");
        }
+       //Read Accounts.txt file
         File dataFile = new File("Accounts.txt");
         try (Scanner data = new Scanner(dataFile)) {
             while (data.hasNextLine()) {
                 String line = data.nextLine().trim();
                 System.out.print(line);
             }
+            //Error message for Reading Accounts.txt file
         } catch (IOException e) {
             System.out.println("Error reading the data");
         }
     }
+
+    /**
+     *
+     * @param name of user for accounts
+     * @param input user input
+     */
     public static void createChecking(String name, Scanner input){
+        //checking variables
         ArrayList<Double> expenses =new ArrayList<>();
         double balance = 0;
         double amount;
         char depositOrNot;
         int numberOfExpenses = 0;
         double expensesTotal = 0;
-
+        // account balance
         System.out.print("What is your Checking Account current balance? ");
         balance= input.nextDouble();
+        // deposit more $$
         System.out.print("DO wish to make an deposit y/n? ");
         depositOrNot = input.next().charAt(0);
         if(depositOrNot == 'y' || depositOrNot =='Y') {
             System.out.print("Enter amount wish to deposit");
             amount = input.nextDouble();
-            balance += amount;//TODO fix deposit object pass
+            balance += amount;//TODO fix amount object pass
         }else if(depositOrNot == 'n' || depositOrNot =='N'){
             amount = 0;
         }else{
             System.out.println("input must be Y or N.");
         }
+        //user expenses
         System.out.print("Do you have any bills or expenses to pay Y/N ");
         depositOrNot = input.next().charAt(0);
+        //number of user expenses
         if(depositOrNot == 'y' || depositOrNot =='Y') {
             System.out.print("Enter the number of different expenses ");
             numberOfExpenses = input.nextInt();
+            //cost of each expense
             for(int i =0;i <= numberOfExpenses;i++){
                 System.out.println("enter Expense");
                 amount= input.nextDouble();
                 expenses.add(amount);
             }
-
         }else if(depositOrNot == 'n' || depositOrNot =='N'){
             numberOfExpenses = 0;
         }else{
             System.out.println("input must be Y or N.");
         }
-
+        //total cost of expenses
         for(double ex : expenses){
             expensesTotal += ex;
         }
-        //expenses file write and read
+        //write given info by the user to Accounts.txt
         try (java.io.PrintWriter myFile = new PrintWriter("Accounts.txt")) {
-            myFile.println(name + balance);
+            myFile.printf(name + balance);
+            //error writing to Accounts.txt file
         }catch (IOException e) {
             System.out.println("File cannot be opened");
         }
