@@ -50,9 +50,7 @@ public class Savings extends Account {
   }
 
   //Returns the Annual Balance of the savings account
-  public double calculateAnnualBalance(){
-    return (super.getBalance() * annualPercentageYield) + annualPercentageYield;
+  public double calculateBalance(double balance, double income, double apy){
+    return ((balance + (income * 12)) * apy) + balance;
   }
-
-  
 }
