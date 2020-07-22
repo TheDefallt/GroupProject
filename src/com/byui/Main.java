@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -118,19 +119,32 @@ public class Main {
         char depositOrNot;
         int numberOfExpenses;
         // account balance
-        System.out.print("What is your Checking Account current balance? ");//TODO CREATE AN TRY CATCH iNPUT.MISMATCH
-        balance= input.nextDouble();
+        try {
+            System.out.print("What is your Checking Account current balance? ");
+            balance = input.nextDouble();
+        }catch(InputMismatchException ex) {
+            System.out.println("Error: input must be an dollar value.");
+            System.exit(0);
+        }
+
+            System.out.println("Error: input must be an integer.");
         // deposit more $$
         System.out.print("DO wish to make an deposit y/n? ");
         depositOrNot = input.next().charAt(0);
         if(depositOrNot == 'y' || depositOrNot =='Y') {
-            System.out.print("Enter amount wish to deposit");//TODO CREATE AN TRY CATCH iNPUT.MISMATCH
-            income = input.nextDouble();
-            balance += income;//TODO change name to amount
+            try {
+                System.out.print("Enter amount wish to deposit");
+                income = input.nextDouble();
+                balance += income;
+            }catch(InputMismatchException ex) {
+                System.out.println("Error: input must be an dollar value.");
+                System.exit(0);}
+
         }else if(depositOrNot == 'n' || depositOrNot =='N'){
             income = 0;
         }else {
             System.out.println("input must be Y or N.");
+            System.exit(0);
         }
         //user expenses
         System.out.print("Do you have any bills or expenses to pay Y/N ");
@@ -148,6 +162,7 @@ public class Main {
             numberOfExpenses = 0;
         }else{
             System.out.println("input must be Y or N.");
+            System.exit(0);
         }
         //write given info by the user to Accounts.txt
         try (java.io.PrintWriter myFile = new PrintWriter("Accounts.txt")) {
@@ -155,9 +170,10 @@ public class Main {
             //error writing to Accounts.txt file
         }catch (IOException e) {
             System.out.println("File cannot be opened");
+            System.exit(0);
         }
 
-        //Checking.displayObject(new Checking(expenses,name,balance));
+        Checking.displayObject(new Checking(expenses,name,balance));
 
     }
 
@@ -179,7 +195,7 @@ public class Main {
         userSavings.setAnnualPercentageYield(input.nextDouble());
 
         //Creates a new file to write savings account data to.
-        java.io.File file = new java.io.File("accounts.txt");
+        java.io.File file = new java.io.File("Accounts.txt");
 
         //Try catch statement that attempts to write to the created file.
         try {
