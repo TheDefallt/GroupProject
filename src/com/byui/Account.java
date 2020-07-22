@@ -46,6 +46,7 @@ public class Account {
     private double balance, income;
     //default object
     public Account(){
+
         dateCreated = new java.util.Date();
     }
     //object

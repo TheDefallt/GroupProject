@@ -74,9 +74,9 @@ public class Main {
         } else if (createOrNot == 'n' || createOrNot == 'N') {
 
         }
-        // if answer not y or n
+        //If answer is not y or n
         else {
-            System.out.println("input must be Y or N.");
+            System.out.println("Input must be Y or N.");
         }
 
         //Savings start, Ask if user would like to create a Savings account.
@@ -88,9 +88,9 @@ public class Main {
         } else if (createOrNot == 'n' || createOrNot == 'N') {
 
         }
-        // if answer not y or n
+        //If answer is not y or n
         else {
-            System.out.println("input must be Y or N.");
+            System.out.println("Input must be Y or N.");
         }
 
         //Read Accounts.txt file
@@ -129,7 +129,7 @@ public class Main {
 
             System.out.println("Error: input must be an integer.");
         // deposit more $$
-        System.out.print("DO wish to make an deposit y/n? ");
+        System.out.print("Do wish to make an deposit y/n? ");
         depositOrNot = input.next().charAt(0);
         if(depositOrNot == 'y' || depositOrNot =='Y') {
             try {
@@ -161,6 +161,7 @@ public class Main {
         }else if(depositOrNot == 'n' || depositOrNot =='N'){
             numberOfExpenses = 0;
         }else{
+<<<<<<< Updated upstream
             System.out.println("input must be Y or N.");
             System.exit(0);
         }
@@ -173,6 +174,12 @@ public class Main {
             System.exit(0);
         }
 
+=======
+            System.out.println("Input must be Y or N.");
+        }
+
+
+>>>>>>> Stashed changes
         Checking.displayObject(new Checking(expenses,name,balance));
 
     }
@@ -180,12 +187,8 @@ public class Main {
     public static void createSavings(String name, Scanner input){
         //Creates a new savings account
         Savings userSavings = new Savings();
-
+        userSavings.setName(name);
         //Asks for relevant Savings account information and the stores it.
-        System.out.println("What is the name or names of the client that is starting the account?");
-        userSavings.setName(input.next());
-        System.out.println("What account number would you like to assign to this account?");
-        userSavings.setAcctNum(input.nextInt());
         System.out.println("What is the beginning balance that you would like to add to this account?");
         userSavings.setBalance(input.nextDouble());
         System.out.println("What is the amount, if any, that will be contributed to this account monthly?");
@@ -202,12 +205,7 @@ public class Main {
             /*New PrintWriter object*/
             PrintWriter output = new PrintWriter(file);
 
-            //Writes all relevant savings account data
-            output.println(userSavings.getName());
-            output.println(userSavings.getAcctNum());
-            output.println(userSavings.getBalance());
-            output.println(userSavings.getIncome());
-            output.println(userSavings.getAnnualPercentageYield());
+
 
             /*Closes the output PrintWriter*/
             output.close();
@@ -245,6 +243,23 @@ public class Main {
             /*Exception that throws an error if the file cannot be read or does not exits and closes the program.*/
             System.out.println("Unable to read data file.");
             System.exit(-1);
+        }
+    }
+
+    public static void readAndWriteFile(Checking checking, Savings savings){
+        //Write given info by the user to Accounts.txt
+        try (java.io.PrintWriter myFile = new PrintWriter("Accounts.txt")) {
+            myFile.println(checking.getName());
+
+            //Writes all relevant savings account data
+            myFile.println(savings.getAcctNum());
+            myFile.println(savings.getBalance());
+            myFile.println(savings.getIncome());
+            myFile.println(savings.getAnnualPercentageYield());
+
+            //Error writing to Accounts.txt file
+        }catch (IOException e) {
+            System.out.println("File cannot be opened");
         }
     }
 }
