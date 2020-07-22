@@ -31,6 +31,7 @@ public class Savings extends Account {
 
   //No-arg constructor
   public Savings(){
+    super();
   }
 
   //Parameterized constructor
@@ -50,7 +51,7 @@ public class Savings extends Account {
   }
 
   //Returns the Annual Balance of the savings account
-  public double calculateBalance(double balance, double income, double apy){
-    return ((balance + (income * 12)) * apy) + balance;
+  public static double calculateBalance(double balance, double income, double apy){
+    return ((balance + (income * 12)) * apy) + (income * 12);
   }
 }

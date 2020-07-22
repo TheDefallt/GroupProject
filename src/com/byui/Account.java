@@ -46,7 +46,9 @@ public class Account {
     private double balance, income;
     //default object
     public Account(){
-
+        final int MAX= 999999999;
+        Random rand= new Random();
+        this.acctNum =rand.nextInt(MAX);
         dateCreated = new java.util.Date();
     }
     //object

@@ -38,8 +38,6 @@ public class Checking extends Account {
   public Checking(ArrayList<Double> expenses, String name, double balance){
     super(name, balance);
     this.expenses = expenses;
-
-
   }
 
   //Expense list getter
@@ -53,7 +51,7 @@ public class Checking extends Account {
   }
 
   //Returns total of all expenses in the expenses ArrayList.
-  public double totalExpenses(){
+  public double getTotalExpenses(){
     double total = 0;
     for (double expense : expenses){
       total += expense;
@@ -63,10 +61,10 @@ public class Checking extends Account {
 
   //Returns total monthly balance after figuring income, current balance, and expenses
   public double finalBalance(){
-    return super.getBalance() + super.getIncome() - totalExpenses();
+    return super.getBalance() + super.getIncome() - getTotalExpenses();
   }
   //polymorpism display object output
   public static void displayObject(Checking object) {
-    System.out.printf("%s\n%d\n%s\n%.2f\n%.2f\n%.2f\n%s\n%.2f",object.getName(), object.getAcctNum(), object.getDateCreated(), object.getBalance(),object.getIncome(),object.totalExpenses(),"---------------",object.finalBalance() );
+    System.out.printf("%s\n%d\n%s\n%.2f\n%.2f\n%.2f\n%s\n%.2f",object.getName(), object.getAcctNum(), object.getDateCreated(), object.getBalance(),object.getIncome(),object.getTotalExpenses(),"---------------",object.finalBalance() );
   }
 }
