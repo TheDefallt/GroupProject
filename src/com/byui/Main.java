@@ -161,28 +161,27 @@ public class Main {
         }else if(depositOrNot == 'n' || depositOrNot =='N'){
             numberOfExpenses = 0;
         }else{
-<<<<<<< Updated upstream
+
             System.out.println("input must be Y or N.");
             System.exit(0);
         }
         //write given info by the user to Accounts.txt
         try (java.io.PrintWriter myFile = new PrintWriter("Accounts.txt")) {
-            myFile.printf(name + balance);
+            myFile.println();
             //error writing to Accounts.txt file
         }catch (IOException e) {
             System.out.println("File cannot be opened");
             System.exit(0);
         }
 
-=======
-            System.out.println("Input must be Y or N.");
+        Checking.displayObject(new Checking(expenses,name,balance));
+
         }
 
 
->>>>>>> Stashed changes
-        Checking.displayObject(new Checking(expenses,name,balance));
 
-    }
+
+
 
     public static void createSavings(String name, Scanner input){
         //Creates a new savings account
