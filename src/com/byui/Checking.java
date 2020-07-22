@@ -39,6 +39,7 @@ public class Checking extends Account {
     super(name, balance);
     this.expenses = expenses;
 
+
   }
 
   //Expense list getter
@@ -61,7 +62,11 @@ public class Checking extends Account {
   }
 
   //Returns total monthly balance after figuring income, current balance, and expenses
-  public double monthlyBalance(){
+  public double finalBalance(){
     return super.getBalance() + super.getIncome() - totalExpenses();
+  }
+  //polymorpism display object output
+  public static void displayObject(Checking object) {
+    System.out.printf("%s\n%d\n%s\n%.2f\n%.2f\n%.2f\n%s\n%.2f",object.getName(), object.getAcctNum(), object.getDateCreated(), object.getBalance(),object.getIncome(),object.totalExpenses(),"---------------",object.finalBalance() );
   }
 }

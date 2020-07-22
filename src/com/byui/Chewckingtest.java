@@ -57,23 +57,22 @@ public class Chewckingtest {
         //checking variables
         ArrayList<Double> expenses =new ArrayList<>();
         double balance = 0;
-        double amount;
+        double income;
         char depositOrNot;
-        int numberOfExpenses = 0;
-        double expensesTotal = 0;
+        int numberOfExpenses;
         // account balance
-        System.out.print("What is your Checking Account current balance? ");
+        System.out.print("What is your Checking Account current balance? ");//TODO CREATE AN TRY CATCH iNPUT.MISMATCH
         balance= input.nextDouble();
         // deposit more $$
         System.out.print("DO wish to make an deposit y/n? ");
         depositOrNot = input.next().charAt(0);
         if(depositOrNot == 'y' || depositOrNot =='Y') {
-            System.out.print("Enter amount wish to deposit");
-            amount = input.nextDouble();
-            balance += amount;//TODO fix amount object pass
+            System.out.print("Enter amount wish to deposit");//TODO CREATE AN TRY CATCH iNPUT.MISMATCH
+            income = input.nextDouble();
+            balance += income;//TODO change name to amount
         }else if(depositOrNot == 'n' || depositOrNot =='N'){
-            amount = 0;
-        }else{
+            income = 0;
+        }else {
             System.out.println("input must be Y or N.");
         }
         //user expenses
@@ -86,17 +85,13 @@ public class Chewckingtest {
             //cost of each expense
             for(int i =0;i <= numberOfExpenses;i++){
                 System.out.println("enter Expense");
-                amount= input.nextDouble();
-                expenses.add(amount);
+                income= input.nextDouble();
+                expenses.add(income);
             }
         }else if(depositOrNot == 'n' || depositOrNot =='N'){
             numberOfExpenses = 0;
         }else{
             System.out.println("input must be Y or N.");
-        }
-        //total cost of expenses
-        for(double ex : expenses){
-            expensesTotal += ex;
         }
         //write given info by the user to Accounts.txt
         try (java.io.PrintWriter myFile = new PrintWriter("Accounts.txt")) {
@@ -105,7 +100,9 @@ public class Chewckingtest {
         }catch (IOException e) {
             System.out.println("File cannot be opened");
         }
-        Account.displayObject(new Checking(expenses,name,balance));
+
+        //Checking.displayObject(new Checking(expenses,name,balance));
+
     }
 
 }

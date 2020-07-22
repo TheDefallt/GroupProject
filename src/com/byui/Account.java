@@ -59,10 +59,9 @@ public class Account {
         this.income = income;
 
     }
-    //polymorpism display object output
-    public static void displayObject(Account object) {
-        System.out.printf(object.getName() +"\n" + object.getAcctNum() +"\n" + object.getDateCreated() + "\n"+"%.2f", object.getBalance());
 
+    public double finalBalance(){
+        return getBalance() + getIncome();
     }
     //getters and setters
     public int getAcctNum() {
@@ -87,7 +86,6 @@ public class Account {
     }
 
     public double getBalance() {
-        balance += getIncome();
         return balance;
     }
     public void setBalance(double balance) {
@@ -100,4 +98,5 @@ public class Account {
     public void setIncome(double income) {
         this.income = income;
     }
+
 }
